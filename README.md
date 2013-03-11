@@ -10,6 +10,24 @@ A bridge to collect data from [CurrentCost](http://www.currentcost.com/) using a
     $ python cc-collectd.py
     ```
 
-2. View the graphs using your favorite collectd viewer.
+2. Configure the collectd Python plugin in your `collectd.conf`:
 
-3. Profit! (from better controlling your electricity usage.)
+    ```
+    <LoadPlugin python>
+        Globals true
+    </LoadPlugin>
+
+    <Plugin python>
+        ModulePath "/path/to/currentcost-collectd"
+        LogTraces true
+        Interactive true
+        Import "currentcost"
+        <Module currentcost>
+            currentcost
+        </Module>
+    </Plugin>
+    ```
+
+3. View the graphs using your favorite collectd viewer.
+
+4. Profit! (from better controlling your electricity usage.)
