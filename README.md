@@ -4,13 +4,7 @@ A bridge to collect data from [CurrentCost](http://www.currentcost.com/) using a
 
 ## Usage
 
-1. Run the data collection daemon:
-
-    ```bash
-    $ python cc-collectd.py
-    ```
-
-2. Configure the collectd Python plugin in your `collectd.conf`:
+1. Configure the collectd Python plugin in your `collectd.conf`:
 
     ```
     <LoadPlugin python>
@@ -28,6 +22,8 @@ A bridge to collect data from [CurrentCost](http://www.currentcost.com/) using a
     </Plugin>
     ```
 
-3. View the graphs using your favorite collectd viewer.
+2. Configure the rrdtool plugin (WIP).
+
+3. View the graphs using your favorite collectd data viewer.
 
 4. Profit! (from better controlling your electricity usage.)
